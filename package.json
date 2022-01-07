@@ -1,0 +1,21 @@
+{
+  "name": "node-sandbox",
+  "version": "1.0.0",
+  "description": "Collection of scripts running on NodeJS",
+  "main": "",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hallbergs/node-sandbox.git"
+  },
+  "author": "Henrik Hallberg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hallbergs/node-sandbox/issues"
+  },
+  "homepage": "https://github.com/Hallbergs/node-sandbox#readme",
+  "dependencies": {}
+}
