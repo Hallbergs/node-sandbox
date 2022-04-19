@@ -32,6 +32,27 @@ export default class Solver {
       eyeColors.get(a) > eyeColors.get(b) ? a : b
     );
   };
+
+  getCombinedBalance = () => {
+    const formatter = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+
+    return formatter.format(
+      INPUT.reduce(
+        (acc, user) => acc + Number(user.balance.replace(/[^0-9.-]+/g, "")),
+        0
+      )
+    );
+  };
+
+  getUserNameFromId = (id) => {
+    const user = INPUT.find((u) => u.id === id);
+    return user ? `${user.name.last}, ${user.name.first}` : null;
+  };
 }
 
 const solver = new Solver();
@@ -40,3 +61,8 @@ console.log("Age above 50: ", solver.getNumUsersOverAge(50));
 console.log("Last registered: ", solver.getLastRegisteredActiveUser());
 console.log("FruitCount: ", solver.getNumFavoriteFruit());
 console.log("Most common eye color is: ", solver.getMostCommonEyeColor());
+console.log("Combined balance: ", solver.getCombinedBalance());
+console.log(
+  "User with id: '5aabbca3e58dc67745d720b1': ",
+  solver.getUserNameFromId("5aabbca3e58dc67745d720b1")
+);
