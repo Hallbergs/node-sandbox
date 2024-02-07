@@ -15,7 +15,6 @@ export default class Solver {
 
   getNumFavoriteFruit = () => {
     const fruitCount = new Map();
-    console.log("Whoopie");
     for (const user of INPUT) {
       const currentCount = fruitCount.get(user.favoriteFruit) || 0;
       fruitCount.set(user.favoriteFruit, currentCount + 1);
